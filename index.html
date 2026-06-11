@@ -4,53 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tan Cheong Hsien | Gameplay Programmer Portfolio</title>
-    <style>
-        :root {
-            --bg-color: #1a1a1a;
-            --text-color: #e0e0e0;
-            --accent-color: #47a7f5;
-            --card-bg: #262626;
-            --border-color: #333;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        header {
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 20px;
-            margin-bottom: 40px;
-        }
-        h1 { margin: 0; color: #fff; font-size: 2.5rem; }
-        .subtitle { font-size: 1.2rem; color: var(--accent-color); margin: 5px 0 15px 0; font-weight: 600; }
-        .links a { color: var(--text-color); margin-right: 15px; text-decoration: none; font-weight: bold; border-bottom: 1px dashed var(--accent-color); }
-        .links a:hover { color: var(--accent-color); }
-        
-        h2 { color: #fff; border-left: 4px solid var(--accent-color); padding-left: 10px; margin-top: 40px; }
-        .project-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 6px; padding: 25px; margin-bottom: 30px; }
-        .project-meta { font-size: 0.9rem; color: #888; margin-bottom: 15px; }
-        .tag { background: #333; padding: 3px 8px; border-radius: 4px; margin-right: 5px; font-size: 0.8rem; color: var(--accent-color); }
-        
-        .grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin: 20px 0; }
-        @media (min-width: 768px) { .grid { grid-template-columns: 1fr 1fr; } }
-        .media-box { background: #000; border: 1px solid var(--border-color); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; color: #555; }
-        
-        .resume-section { margin-bottom: 25px; }
-        .resume-item { margin-bottom: 15px; }
-        .item-header { display: flex; justify-content: space-between; font-weight: bold; color: #fff; }
-        .item-sub { display: flex; justify-content: space-between; color: #888; font-size: 0.9rem; font-style: italic; }
-        ul { margin: 5px 0; padding-left: 20px; }
-        li { margin-bottom: 5px; }
-    </style>
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -59,95 +14,95 @@
         <h1>Tan Cheong Hsien</h1>
         <div class="subtitle">Gameplay / Systems Programmer</div>
         <div class="links">
-            <a href="mailto:your.email@example.com">Email Me</a>
+            <a href="mailto:cheonghsien@u.nus.edu">Email Me</a>
             <a href="https://github.com/ketamethane" target="_blank">GitHub</a>
-            <a href="#">Download Resume (PDF)</a>
+            <a href="assets/resume.pdf" target="_blank">View Full Resume (PDF)</a>
         </div>
     </header>
 
     <main>
+        <section id="about">
+            <h2>Profile</h2>
+            <p>
+                Computer Science graduate from the National University of Singapore with a foundational background in software engineering, data structures, and computer graphics. Experienced in <strong>Unreal Engine 5 (C++ & Blueprints)</strong>, focusing on core gameplay flow, state tracking, and collaborative version control pipelines.
+            </p>
+        </section>
+
         <section id="projects">
-            <h2>Featured Game Project</h2>
+            <h2>Featured Project</h2>
             
             <div class="project-card">
                 <h3>Hours Between (3D Platformer)</h3>
                 <div class="project-meta">
                     <span class="tag">Unreal Engine 5</span>
                     <span class="tag">C++ / Blueprints</span>
-                    <span class="tag">Git</span>
                     <span>| Jan 2025 - Apr 2025 (6-Player Team)</span>
                 </div>
                 
-                <p>Served as Systems and Core Flow Programmer for a 3D platformer built in UE5. Focused heavily on macro game loop architecture, state-machine stability, and establishing clean repository integration constraints to prevent merge conflicts across binary assets for a multi-disciplinary team.</p>
+                <p>Served as Core Flow and State Programmer for a 3D platformer built in UE5. Responsible for connecting the game's macro structures, implementing persistent variable tracking, and managing game loop loops from menus to level boundaries.</p>
                 
-                <h4>Key Implementations & Technical Breakdowns</h4>
-                <ul>
-                    <li><strong>Persistent Game-Save System:</strong> Implemented a robust local serialization pipeline utilizing UE5’s <code>USaveGame</code> framework. Managed tracking and persistent reconstruction of character coordinates, global game flags, and progression metrics across level instances.</li>
-                    <li><strong>Global State Transition Machine:</strong> Architected the fundamental game loop flow handles. Built decoupled UI/Game state bridges ensuring failure states, game-over cascades, and pause mechanics accurately paused tick tracking without breaking underlying asynchronous processes.</li>
-                    <li><strong>Asset Pipeline & Git Stabilization:</strong> Maintained version control discipline for 6 developers. Designed a clean layout mapping system to prevent parallel asset lockups, resolving multi-user collision risks inside binary level data.</li>
-                </ul>
+                <h4>Technical Implementations & Breakdowns</h4>
+                <p style="color: #888; font-size: 0.9rem; margin-bottom: 15px;">👉 Click a module to view the implementation context.</p>
 
-                <div class="grid">
-                    <div class="media-box">[ Video: Main Menu & State Transitions Loop ]</div>
-                    <div class="media-box">[ Blueprint Screenshot: Save / Load Logic Workflow ]</div>
-                </div>
-                
-                <p><strong>Project Links:</strong> <a href="#" style="color: var(--accent-color);">Play Build on Itch.io (Coming Soon)</a></p>
+                <details class="expandable-card">
+                    <summary>Inter-Level Data Persistence & Progression Tracking</summary>
+                    <div class="card-content">
+                        <p>Managed state and variable tracking during level-to-level transitions. Engineered the serialization and retrieval pipeline to ensure global player metrics (such as collected items and checkpoint flags) persist accurately when the engine flushes local memory across level loads.</p>
+                        <div class="media-container">
+                            <video src="assets/persistence-demo.mp4" autoplay loop muted controls style="width:100%; max-width:100%; height:auto;"></video>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="expandable-card">
+                    <summary>Audio Integration</summary>
+                    <div class="card-content">
+                        <p>Programmed the foundational user-interface flow, connecting menu buttons to game-state loads. Managed variable toggles that control player input authorization states during initialization screens.</p>
+                        <p><strong>Sound Design Note:</strong> Produced the original background track layout using Ableton Live and integrated it to deepen gameplay immersion.</p>
+                        
+                        <div class="audio-tabs-container">
+                            <span class="tabs-label">Select Level Track:</span>
+                            <button class="audio-tab active" id="btn-menu" onclick="switchLevel('menu', this)">Main Menu</button>
+                            <button class="audio-tab" id="btn-level1" onclick="switchLevel('cupboard', this)">Cupboard Theme</button>
+                            <button class="audio-tab" id="btn-level2" onclick="switchLevel('shelf', this)">Shelf Theme</button>
+                        </div>
+                        
+                        <div class="media-container" style="margin-top: 15px;">
+                            <video id="audio-gameplay-video" src="assets/menu.mp4" controls style="width:100%; max-width:100%; height:auto;"></video>
+                        </div>
+                    </div>
+                </details>
             </div>
         </section>
 
-        <section id="education">
-            <h2>Education</h2>
-            <div class="resume-item">
-                <div class="item-header">National University of Singapore</div>
-                <div class="item-sub"><span>Bachelor of Computing (Honours) in Computer Science</span> <span>Aug 2021 - Jun 2025</span></div>
-                <p style="margin: 5px 0; font-size: 0.95rem;"><strong>Relevant Coursework:</strong> Computer Graphics (Shaders, Rendering Pipelines), Game Development (Physics Engines, C++ Scripting), Software Engineering, Data Structures & Algorithms, Linear Algebra.</p>
+        <section id="graphics-tech">
+            <h2>Academic Foundations</h2>
+            <div class="project-card">
+                <h3>Computer Graphics Coursework (NUS)</h3>
+                <div class="project-meta">
+                    <span class="tag">OpenGL</span>
+                    <span class="tag">C++ Scripting</span>
+                </div>
+                <p>Completed foundational coursework emphasizing real-time graphics pipelines and low-level math applications:</p>
+                <ul>
+                    <li><strong>Graphics Pipeline:</strong> Studied theoretical foundations of vector transformations, matrix mathematics, projection models, and the standard rendering pipeline stages using OpenGL.</li>
+                    <li><strong>Core Mechanics:</strong> Covered scripting constraints, object transformations, and standard camera tracking behavior calculations.</li>
+                </ul>
             </div>
         </section>
 
         <section id="skills">
-            <h2>Skills & Languages</h2>
+            <h2>Technical Capabilities & Languages</h2>
             <ul>
-                <li><strong>Languages:</strong> Native in English and Mandarin | Intermediate in Japanese (Completed N3-equivalent module at NUS).</li>
-                <li><strong>Game Tech:</strong> Unreal Engine 5 (C++ & Blueprints), Computer Graphics (OpenGL).</li>
-                <li><strong>Programming:</strong> C++, C, Java, JavaScript, Python, Golang, HTML, CSS, SQL.</li>
-                <li><strong>Tools:</strong> Figma, Expo, Git, SourceTree, Firebase, MongoDB, Ableton Live.</li>
+                <li><strong>Game Technology:</strong> Unreal Engine 5 (C++ & Blueprints), Computer Graphics (OpenGL)</li>
+                <li><strong>Core Programming:</strong> C++, C, Java, JavaScript, Python, Golang, HTML/CSS, SQL</li>
+                <li><strong>Languages:</strong> Native in English and Mandarin | Intermediate in Japanese (Completed N3-equivalent module at NUS)</li>
+                <li><strong>Audio Tools (Secondary):</strong> Ableton Live (Basic background track arrangement and sound asset adjustments)</li>
             </ul>
-        </section>
-
-        <section id="experience">
-            <h2>Technical & Work Experience</h2>
-            
-            <div class="resume-item">
-                <div class="item-header">GoNetZero™</div>
-                <div class="item-sub"><span>Software Intern (Backend APIs & Data Architecture)</span> <span>Mar 2024 - Jul 2024</span></div>
-                <ul>
-                    <li>Implemented production-ready backend APIs in Golang from scratch utilizing Test-Driven Development (TDD) principles.</li>
-                    <li>Leveraged LLMs to categorize multi-language textual tracking arrays for localized greenhouse gas emission calculations (Scopes 1 to 3).</li>
-                </ul>
-            </div>
-
-            <div class="resume-item">
-                <div class="item-header">Sembcorp Industries Ltd</div>
-                <div class="item-sub"><span>HR Systems Intern (Data Automation)</span> <span>Jan 2024 - Feb 2024</span></div>
-                <ul>
-                    <li>Built an automation proof-of-concept tool to programmatically parse and cross-validate massive legacy corporate datasets during live migration phases.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="non-game-projects">
-            <h2>Other Projects</h2>
-            <div class="resume-item">
-                <div class="item-header">PeerPrep</div>
-                <div class="item-sub"><span>Real-Time Technical Interview Platform</span> <span>Aug 2024 - Nov 2024</span></div>
-                <ul>
-                    <li>Coordinated in a team of 5 to develop a synchronized multi-user system using React, RabbitMQ, and MongoDB. Deployed on Google Kubernetes Engine (GKE) cluster layers.</li>
-                </ul>
-            </div>
         </section>
     </main>
 </div>
 
+    <script src="script.js"></script>
 </body>
 </html>

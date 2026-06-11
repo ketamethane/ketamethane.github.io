@@ -1,0 +1,175 @@
+:root {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --accent-color: #47a7f5;
+    --card-bg: #262626;
+    --border-color: #333;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+header {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+h1 { margin: 0; color: #fff; font-size: 2.5rem; }
+
+.subtitle { 
+    font-size: 1.2rem; 
+    color: var(--accent-color); 
+    margin: 5px 0 15px 0; 
+    font-weight: 600; 
+}
+
+.links a { 
+    color: var(--text-color); 
+    margin-right: 15px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    border-bottom: 1px dashed var(--accent-color); 
+}
+
+.links a:hover { color: var(--accent-color); }
+
+h2 { color: #fff; border-left: 4px solid var(--accent-color); padding-left: 10px; margin-top: 40px; }
+
+.project-card { 
+    background: var(--card-bg); 
+    border: 1px solid var(--border-color); 
+    border-radius: 6px; 
+    padding: 25px; 
+    margin-bottom: 30px; 
+}
+
+.project-meta { font-size: 0.9rem; color: #888; margin-bottom: 15px; }
+
+.tag { 
+    background: #333; 
+    padding: 3px 8px; 
+    border-radius: 4px; 
+    margin-right: 5px; 
+    font-size: 0.8rem; 
+    color: var(--accent-color); 
+}
+
+.grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin: 20px 0; }
+@media (min-width: 768px) { .grid { grid-template-columns: 1fr 1fr; } }
+
+.media-box { 
+    background: #000; 
+    border: 1px solid var(--border-color); 
+    aspect-ratio: 16/9; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: #555; 
+}
+
+.resume-section { margin-bottom: 25px; }
+.resume-item { margin-bottom: 15px; }
+
+.item-header { display: flex; justify-content: space-between; font-weight: bold; color: #fff; }
+.item-sub { display: flex; justify-content: space-between; color: #888; font-size: 0.9rem; font-style: italic; }
+
+ul { margin: 5px 0; padding-left: 20px; }
+li { margin-bottom: 5px; }
+
+/* Expandable Card Layout Rules */
+.expandable-card {
+    background: #222;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+}
+
+.expandable-card:hover {
+    border-color: var(--accent-color);
+}
+
+.expandable-card summary {
+    padding: 15px 20px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2a2a2a;
+    user-select: none;
+}
+
+.expandable-card summary::after {
+    content: '▶';
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    transition: transform 0.2s ease;
+}
+
+.expandable-card[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.card-content {
+    padding: 20px;
+    background: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+}
+
+/* Layout wrapper for the level selection layout */
+.audio-tabs-container {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.tabs-label {
+    font-size: 0.9rem;
+    color: #888;
+    margin-right: 5px;
+}
+
+/* Individual Level Button Styling */
+.audio-tab {
+    background: #333;
+    border: 1px solid transparent;
+    color: #47a7f5; /* Uses your --accent-color variable value */
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.audio-tab:hover {
+    background: #444;
+    border-color: #47a7f5;
+}
+
+/* Visually highlights which level video is currently loaded */
+.audio-tab.active {
+    background: #47a7f5;
+    color: #1a1a1a;
+    border-color: #47a7f5;
+}
